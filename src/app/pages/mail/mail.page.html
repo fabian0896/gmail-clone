@@ -1,5 +1,5 @@
-<ion-content>
-  <div class="search-overlay" slot="fixed">
+<ion-content scrollEvents="true" [appHideHeader]="header">
+  <div class="search-overlay" slot="fixed" #header>
     <ion-row>
       <ion-col size="2">
         <ion-menu-button color="dark"></ion-menu-button>
@@ -8,7 +8,7 @@
         <ion-input placeholder="search emails"></ion-input>
       </ion-col>
       <ion-col size="2">
-        <ion-avatar>
+        <ion-avatar (click)="openAccount($event)">
           <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
         </ion-avatar>
       </ion-col>
@@ -28,7 +28,7 @@
             {{ mail.from | slice:0:1 }}
           </div>
         </ion-col>
-        <ion-col size="8">
+        <ion-col (click)="openDetails(mail.id)" size="8">
           <ion-label
             [style.font-weight]="!mail.read ? 'bold' : ''"
             color="dark"
