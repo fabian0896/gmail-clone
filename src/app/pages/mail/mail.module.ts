@@ -9,6 +9,7 @@ import { MailPageRoutingModule } from './mail-routing.module';
 import { MailPage } from './mail.page';
 import { AccountPageModule } from '../account/account.module';
 import { SharedDirectivesModule } from 'src/app/directives/shared-directives.module';
+import { SharedComponentsModule } from 'src/app/components/shared-components.module';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { SharedDirectivesModule } from 'src/app/directives/shared-directives.mod
     MailPageRoutingModule,
     AccountPageModule,
     SharedDirectivesModule,
+    SharedComponentsModule,
   ],
   declarations: [MailPage]
 })

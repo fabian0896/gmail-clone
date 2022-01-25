@@ -1,4 +1,7 @@
-<ion-content scrollEvents="true" [appHideHeader]="header">
+<ion-content
+  scrollEvents="true"
+  [appAnimatedFab]="fab"
+  [appHideHeader]="header">
   <div class="search-overlay" slot="fixed" #header>
     <ion-row>
       <ion-col size="2">
@@ -49,4 +52,12 @@
       </ion-row>
     </ion-item>
   </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="light" #fab>
+      <ion-icon color="primary" name="pencil-outline"></ion-icon>
+      <span>Compose</span>
+    </ion-fab-button>
+  </ion-fab>
+
 </ion-content>

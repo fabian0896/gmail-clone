@@ -12,7 +12,7 @@ export class HideHeaderDirective {
 
   @HostListener('ionScroll', ['$event'])
   onScroll($event: ScrollCustomEvent) {
-    const scrollTop = $event.detail.scrollTop;
+    const { scrollTop } = $event.detail;
 
     const opacityValue = Math.max(0, this.maxLen - scrollTop) / 100;
     const topValue = Math.min(this.maxLen, scrollTop);
