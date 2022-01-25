@@ -6,7 +6,6 @@ import randomColor from 'randomcolor';
 import { Router } from '@angular/router';
 import { PopoverController } from '@ionic/angular';
 import { AccountPage } from '../account/account.page';
-import { AccountPageModule } from '../account/account.module';
 
 @Component({
   selector: 'app-mail',
@@ -50,6 +49,11 @@ export class MailPage implements OnInit {
 
   openDetails(id: string) {
     this.router.navigate(['tabs', 'mail', id]);
+  }
+
+  deleteMail(id: string) {
+    this.emails = this.emails.filter((mail) => mail.id !== id);
+    console.log(this.emails);
   }
 
 }
